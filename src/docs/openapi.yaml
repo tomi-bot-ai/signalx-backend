@@ -1,0 +1,21 @@
+openapi: 3.0.3
+info:
+title: SignalX API
+version: 1.0.0
+servers:
+- url: ${BASE_URL}
+paths:
+/api/health:
+get:
+summary: Health check
+responses: { '200': { description: OK } }
+/api/signals:
+get:
+summary: List recent signals
+parameters:
+- in: query
+name: limit
+schema: { type: integer, default: 100 }
+responses:
+'200':
+description: OK
